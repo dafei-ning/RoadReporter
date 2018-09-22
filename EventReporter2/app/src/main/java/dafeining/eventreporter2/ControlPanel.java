@@ -1,6 +1,7 @@
 package dafeining.eventreporter2;
 
 import android.icu.text.DecimalFormat;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,7 +28,7 @@ public class ControlPanel extends AppCompatActivity {
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         vpPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-        vpPager.setCurrentItem(0);
+        vpPager.setCurrentItem(1);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -77,6 +78,22 @@ public class ControlPanel extends AppCompatActivity {
                 }
         );
 
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // set item as selected to persist highlight
+                        menuItem.setChecked(true);
+                        // close drawer when item is tapped
+                        //mDrawerLayout.closeDrawers();
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+                        return true;
+                    }
+                });
+
+
     }
 
 
@@ -95,7 +112,7 @@ public class ControlPanel extends AppCompatActivity {
          * Fragment pager allows us to choose fragments
          */
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 1;
+        private static int NUM_ITEMS = 2;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -113,6 +130,8 @@ public class ControlPanel extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return LoginFragment.newInstance();
+                case 1:
+                    return MainFragment.newInstance();
                 default:
                     return null;
             }
