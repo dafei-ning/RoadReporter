@@ -2,6 +2,7 @@ package dafeining.eventreporter2;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,8 @@ import android.widget.ListView;
  */
 public class EventFragment extends Fragment {
 
+    private ListView listView;
+
 
     public EventFragment() {
         // Required empty public constructor
@@ -30,26 +33,33 @@ public class EventFragment extends Fragment {
         // 首先得到整个view
         View view = inflater.inflate(R.layout.fragment_event, container, false);
         // 将 view 换成 listView
-        ListView listView = (ListView) view.findViewById(R.id.event_list);
+        listView = (ListView) view.findViewById(R.id.event_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 getEventNames());
-
         // Assign adapter to ListView.
         listView.setAdapter(adapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mCallback.onItemSelected(i);
+//                onItemSelected();
             }
         });
-
-
         return view;
-
     }
+
+    public void onItemSelected(int position){
+        for (int i = 0; i < listView.getChildCount(); i++){
+            if (position == i) {
+                listView.getChildAt(i).setBackgroundColor(Color.GRAY);
+            } else {
+                listView.getChildAt(i).setBackgroundColor(Color.parseColor("#FAFAFA"));
+            }
+        }
+    }
+
 
     private String[] getEventNames() {
         String[] names = {

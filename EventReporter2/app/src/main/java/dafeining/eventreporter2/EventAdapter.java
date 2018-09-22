@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -39,6 +40,14 @@ public class EventAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.event_item, parent, false);
         }
+
+        ImageView eventImage = (ImageView) convertView.findViewById(R.id.event_thumbnail);
+        if (position % 2 == 1) {
+            eventImage.setImageDrawable(context.getDrawable(R.drawable.witcher3_icon));
+        } else {
+            eventImage.setImageDrawable(context.getDrawable(R.drawable.witcher3_icon2));
+        }
+
 
         TextView eventTitle = (TextView) convertView.findViewById(R.id.event_title);
         TextView eventAddress = (TextView) convertView.findViewById(R.id.event_address);

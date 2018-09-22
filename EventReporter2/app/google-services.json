@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "300327128628",
+    "firebase_url": "https://eventreporter2-90203.firebaseio.com",
+    "project_id": "eventreporter2-90203",
+    "storage_bucket": "eventreporter2-90203.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300327128628:android:610c8c8d2a3e4653",
+        "android_client_info": {
+          "package_name": "dafeining.eventreporter2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300327128628-2aq04qukp1j4pokar1mied17rhdouvk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dafeining.eventreporter2",
+            "certificate_hash": "9ee004991dcdc945ca0585febadd0467b37022d0"
+          }
+        },
+        {
+          "client_id": "300327128628-mcj02qio03qn3qehc8hm2iciu3k2hsgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjmuRmencFVR-bueHAKdbc0-NddRTGquM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300327128628-mcj02qio03qn3qehc8hm2iciu3k2hsgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
