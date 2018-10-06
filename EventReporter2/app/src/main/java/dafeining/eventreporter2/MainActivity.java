@@ -2,12 +2,11 @@ package dafeining.eventreporter2;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+
+import dafeining.eventreporter2.Fragments.CommentFragment;
+import dafeining.eventreporter2.Fragments.EventFragment;
 
 
 public class MainActivity extends AppCompatActivity implements EventFragment.OnItemSelectListener, CommentFragment.OnItemSelectListener {

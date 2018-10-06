@@ -16,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import dafeining.eventreporter2.Fragments.LoginFragment;
+import dafeining.eventreporter2.Fragments.MainFragment;
+
 
 public class ControlPanel extends AppCompatActivity {
 
@@ -85,7 +88,10 @@ public class ControlPanel extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
+
+
                         // close drawer when item is tapped
+
                         //mDrawerLayout.closeDrawers();
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
